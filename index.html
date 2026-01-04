@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Skill Journal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle">🌙</button>
+
+<header>
+    <div class="container header-container">
+        <h1>Real Skill Journal</h1>
+    </div>
+    <p class="tagline">Real learning. Real mistakes. Real growth.</p>
+</header>
+
+<main class="container">
+
+    <!-- SKILL TABS -->
+    <section>
+        <h2>🎯 Select Skill</h2>
+        <div class="tabs" id="tabs">
+            <button class="tab-btn active" data-skill="coding">Coding</button>
+            <button class="tab-btn" data-skill="writing">Writing</button>
+            <button class="tab-btn" data-skill="design">Design</button>
+            <button class="tab-btn" data-skill="personal">Personal Growth</button>
+        </div>
+    </section>
+
+    <!-- Mood & Time Tracker -->
+    <section>
+        <h2>📊 Mood & Time Tracker</h2>
+        <div class="tracker">
+            <label>Mood:</label>
+            <select id="mood">
+                <option value="😄 Confident">😄 Confident</option>
+                <option value="😐 Okay">😐 Okay</option>
+                <option value="😣 Confused">😣 Confused</option>
+                <option value="😴 Tired">😴 Tired</option>
+            </select>
+            <label>Time Spent (minutes):</label>
+            <input type="number" id="timeSpent" min="0" value="30">
+            <button id="saveTracker">Save</button>
+            <p id="trackerStatus"></p>
+        </div>
+        <canvas id="moodChart" height="200"></canvas>
+        <canvas id="timeChart" height="200"></canvas>
+        <button id="exportPDF">Export Growth Letter as PDF</button>
+    </section>
+
+    <!-- Journal Sections -->
+    <section>
+        <h2>📒 Today I Learned</h2>
+        <div id="todayLearned" class="journal-entry"></div>
+        <textarea id="learnInput" placeholder="Write what you learned today..."></textarea>
+        <button id="saveLearn">Add Entry</button>
+    </section>
+
+    <section>
+        <h2>❌ Mistakes I Made</h2>
+        <div id="mistakesList" class="journal-entry"></div>
+        <textarea id="mistakeInput" placeholder="Write your mistake here..."></textarea>
+        <button id="saveMistake">Add Mistake</button>
+    </section>
+
+    <section>
+        <h2>🏆 Small Wins</h2>
+        <div id="winsList" class="journal-entry"></div>
+        <textarea id="winInput" placeholder="Write a small win..."></textarea>
+        <button id="saveWin">Add Win</button>
+    </section>
+
+    <section>
+        <h2>❓ Questions I Still Have</h2>
+        <div id="questionsList" class="journal-entry"></div>
+        <textarea id="questionInput" placeholder="Write your question..."></textarea>
+        <button id="saveQuestion">Add Question</button>
+    </section>
+
+    <section>
+        <h2>🔁 Weekly Reflection</h2>
+        <div id="reflectionList" class="journal-entry"></div>
+        <textarea id="reflectionInput" placeholder="Write your weekly reflection..."></textarea>
+        <button id="saveReflection">Add Reflection</button>
+    </section>
+
+    <!-- Monthly Growth Letter -->
+    <section>
+        <h2>✉️ Monthly Growth Letter</h2>
+        <button id="generateLetter">Generate Letter</button>
+        <div id="growthLetter" class="journal-entry"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>“Consistency beats motivation. Showing up beats perfection.”</p>
+    <p>&copy; 2026 Real Skill Journal</p>
+</footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
